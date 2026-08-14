@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Briefing: Kurumsal Agentic AI Stratejisi</title>
+    <!-- Tailwind CSS & Chart.js -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .accent-gradient { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); }
+    </style>
+</head>
+<body class="p-6">
+
+    <!-- Header Section -->
+    <header class="flex justify-between items-center mb-8 border-b border-slate-700 pb-4">
+        <div>
+            <div class="flex items-center gap-3">
+                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full border border-blue-500/30">STRATEJİK YÖNETİCİ ÖZETİ</span>
+                <span class="text-slate-400 text-sm"><i class="far me-1 fa-calendar-alt"></i> Q1 2026 Konsensüsü</span>
+            </div>
+            <h1 class="text-3xl font-extrabold mt-2 text-white tracking-tight">Agentic AI (Ajan Yapay Zekâ) Kurumsal Dönüşüm Görünümü</h1>
+            <p class="text-slate-400 text-sm mt-1">7 Küresel Strateji ve Teknoloji Araştırmasının Sentez ve Metrik Analizi</p>
+        </div>
+        <div class="flex gap-3">
+            <a href="Agentic_AI_Yonetici_Raporu.docx" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-lg text-sm text-slate-200 transition flex items-center gap-2">
+                <i class="far fa-file-word text-blue-400"></i> Word Raporunu İndir
+            </a>
+        </div>
+    </header>
+
+    <!-- Top KPI Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-5 mb-8">
+        <div class="glass-card p-5 rounded-xl border-l-4 border-blue-500">
+            <div class="text-slate-400 text-xs font-bold uppercase tracking-wider">Kurumsal Benimseme Oranı</div>
+            <div class="text-3xl font-extrabold text-white mt-2">%35 <span class="text-emerald-400 text-sm font-normal"><i class="fas fa-arrow-up"></i> Canlıda</span></div>
+            <p class="text-slate-400 text-xs mt-2">+%44 Pilot/Hazırlık aşamasında (BCG)</p>
+        </div>
+        <div class="glass-card p-5 rounded-xl border-l-4 border-purple-500">
+            <div class="text-slate-400 text-xs font-bold uppercase tracking-wider">Verimlilik Sıçraması</div>
+            <div class="text-3xl font-extrabold text-white mt-2">%25 - %30</div>
+            <p class="text-slate-400 text-xs mt-2">Uçtan uca mimari dönüşümde (Bain)</p>
+        </div>
+        <div class="glass-card p-5 rounded-xl border-l-4 border-indigo-500">
+            <div class="text-slate-400 text-xs font-bold uppercase tracking-wider">Yeni İşletim Modeli İhtiyacı</div>
+            <div class="text-3xl font-extrabold text-white mt-2">%78</div>
+            <p class="text-slate-400 text-xs mt-2">CXO seviye değişim talebi (IBM IBV)</p>
+        </div>
+        <div class="glass-card p-5 rounded-xl border-l-4 border-emerald-500">
+            <div class="text-slate-400 text-xs font-bold uppercase tracking-wider">API Token Kullanım Artışı</div>
+            <div class="text-3xl font-extrabold text-white mt-2">320x</div>
+            <p class="text-slate-400 text-xs mt-2">Kurumsal Ajan İş Yüklerinde (OpenAI)</p>
+        </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <!-- Chart 1: Dönüşüm Modeli karşılaştırması -->
+        <div class="glass-card p-6 rounded-xl lg:col-span-2">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-slate-100"><i class="fas fa-chart-line text-blue-400 mr-2"></i>Yatırım Seviyesine Göre Verimlilik Kazanımı (Bain & Co. Verisi)</h3>
+                <span class="text-xs text-slate-400">Geleneksel vs. Ajanik Mimari</span>
+            </div>
+            <div class="h-64">
+                <canvas id="roiChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Chart 2: Kurumsal Ajan Kullanım Alanları Dağılımı -->
+        <div class="glass-card p-6 rounded-xl">
+            <h3 class="text-lg font-bold text-slate-100 mb-4"><i class="fas fa-pie-chart text-purple-400 mr-2"></i>Ajan Odak Alanları</h3>
+            <div class="h-64 flex justify-center">
+                <canvas id="focusChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Source Reports Grid (Click to expand source details) -->
+    <div class="mb-8">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold text-white"><i class="fas fa-database text-blue-400 mr-2"></i>7 Küresel Araştırma ve Kaynaklar</h2>
+            <span class="text-xs text-slate-400">Detay ve kaynak linki için karta tıklayın</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            
+            <!-- Card 1 -->
+            <div class="glass-card p-5 rounded-xl hover:border-blue-500 transition cursor-pointer group" onclick="openModal('openai')">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded">OpenAI</span>
+                    <i class="fas fa-external-link-alt text-slate-500 group-hover:text-blue-400 text-xs"></i>
+                </div>
+                <h4 class="text-base font-bold text-slate-100 group-hover:text-blue-300">The State of Enterprise AI</h4>
+                <p class="text-slate-400 text-xs mt-2 line-clamp-2">Gelir odaklı ROI, ChatGPT Enterprise'da 8 kat büyüme ve 320 kat API token artışı.</p>
+                <div class="mt-4 pt-3 border-t border-slate-700/50 flex justify-between text-xs text-slate-400">
+                    <span>Odak: Gelir Büyümesi</span>
+                    <span class="text-blue-400 font-medium">Kaynak Detayı &rarr;</span>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="glass-card p-5 rounded-xl hover:border-blue-500 transition cursor-pointer group" onclick="openModal('accenture')">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-2.5 py-1 bg-purple-500/10 text-purple-400 text-xs font-bold rounded">Accenture</span>
+                    <i class="fas fa-external-link-alt text-slate-500 group-hover:text-blue-400 text-xs"></i>
+                </div>
+                <h4 class="text-base font-bold text-slate-100 group-hover:text-blue-300">Agentic AI Platform Strategy</h4>
+                <p class="text-slate-400 text-xs mt-2 line-clamp-2">Çoklu ajan orkestrasyonu, ekosistem ağ etkileri ve platform mimarisi değişimi.</p>
+                <div class="mt-4 pt-3 border-t border-slate-700/50 flex justify-between text-xs text-slate-400">
+                    <span>Odak: Platform Orkestrasyonu</span>
+                    <span class="text-blue-400 font-medium">Kaynak Detayı &rarr;</span>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-card p-5 rounded-xl hover:border-blue-500 transition cursor-pointer group" onclick="openModal('anthropic')">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-2.5 py-1 bg-amber-500/10 text-amber-400 text-xs font-bold rounded">Anthropic</span>
+                    <i class="fas fa-external-link-alt text-slate-500 group-hover:text-blue-400 text-xs"></i>
+                </div>
+                <h4 class="text-base font-bold text-slate-100 group-hover:text-blue-300">2026 State of AI Agents</h4>
+                <p class="text-slate-400 text-xs mt-2 line-clamp-2">Araç kullanımı, uzun süreli planlama yeteneği, Evals ve güvenlik mimarisi.</p>
+                <div class="mt-4 pt-3 border-t border-slate-700/50 flex justify-between text-xs text-slate-400">
+                    <span>Odak: Güvenlik & Evaluasyon</span>
+                    <span class="text-blue-400 font-medium">Kaynak Detayı &rarr;</span>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="glass-card p-5 rounded-xl hover:border-blue-500 transition cursor-pointer group" onclick="openModal('bcg')">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-2.5 py-1 bg-indigo-500/10 text-indigo-400 text-xs font-bold rounded">BCG</span>
+                    <i class="fas fa-external-link-alt text-slate-500 group-hover:text-blue-400 text-xs"></i>
+                </div>
+                <h4 class="text-base font-bold text-slate-100 group-hover:text-blue-300">Machines That Manage Themselves</h4>
+                <p class="text-slate-400 text-xs mt-2 line-clamp-2">Ajanların CapEx ve OpEx hibrit yapısı, Human-on-the-Loop otonom yönetimi.</p>
+                <div class="mt-4 pt-3 border-t border-slate-700/50 flex justify-between text-xs text-slate-400">
+                    <span>Odak: Otonom Yönetim</span>
+                    <span class="text-blue-400 font-medium">Kaynak Detayı &rarr;</span>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="glass-card p-5 rounded-xl hover:border-blue-500 transition cursor-pointer group" onclick="openModal('bain')">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-2.5 py-1 bg-rose-500/10 text-rose-400 text-xs font-bold rounded">Bain & Company</span>
+                    <i class="fas fa-external-link-alt text-slate-500 group-hover:text-blue-400 text-xs"></i>
+                </div>
+                <h4 class="text-base font-bold text-slate-100 group-hover:text-blue-300">Foundation for Agentic AI</h4>
+                <p class="text-slate-400 text-xs mt-2 line-clamp-2">Parçalı araçların %10 kazancına karşın, uçtan uca mimariyle %30 verim artışı.</p>
+                <div class="mt-4 pt-3 border-t border-slate-700/50 flex justify-between text-xs text-slate-400">
+                    <span>Odak: BT & Mimari Darboğazlar</span>
+                    <span class="text-blue-400 font-medium">Kaynak Detayı &rarr;</span>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="glass-card p-5 rounded-xl hover:border-blue-500 transition cursor-pointer group" onclick="openModal('ibm')">
+                <div class="flex justify-between items-start mb-3">
+                    <span class="px-2.5 py-1 bg-cyan-500/10 text-cyan-400 text-xs font-bold rounded">IBM IBV & McKinsey</span>
+                    <i class="fas fa-external-link-alt text-slate-500 group-hover:text-blue-400 text-xs"></i>
+                </div>
+                <h4 class="text-base font-bold text-slate-100 group-hover:text-blue-300">The Agentic Organization & Operating Model</h4>
+                <p class="text-slate-400 text-xs mt-2 line-clamp-2">Sonuç odaklı hibrit işletim modeli ve Dijital Kurmay (Chief of Staff) ajanlar.</p>
+                <div class="mt-4 pt-3 border-t border-slate-700/50 flex justify-between text-xs text-slate-400">
+                    <span>Odak: Organizasyon & İşletim</span>
+                    <span class="text-blue-400 font-medium">Kaynak Detayı &rarr;</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Charts Script -->
+    <script>
+        // Chart 1: ROI / Efficiency Chart
+        const ctxRoi = document.getElementById('roiChart').getContext('2d');
+        new Chart(ctxRoi, {
+            type: 'bar',
+            data: {
+                labels: ['Tekil Kodlama/Yazım Araçları', 'Geleneksel Copilot', 'Süreç Bazlı Ajan Katmanı', 'Uçtan Uca Ajanik Mimari'],
+                datasets: [{
+                    label: 'Verimlilik Kazanımı (%)',
+                    data: [10, 15, 22, 30],
+                    backgroundColor: ['#475569', '#3b82f6', '#8b5cf6', '#10b981'],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+                    x: { grid: { display: false }, ticks: { color: '#94a3b8' } }
+                }
+            }
+        });
+
+        // Chart 2: Focus Areas
+        const ctxFocus = document.getElementById('focusChart').getContext('2d');
+        new Chart(ctxFocus, {
+            type: 'doughnut',
+            data: {
+                labels: ['Yazılım & BT Otonomasyonu', 'Müşteri Hizmetleri & Operasyon', 'Finans & Karar Destek', 'Ürün & AR-GE'],
+                datasets: [{
+                    data: [35, 30, 20, 15],
+                    backgroundColor: ['#3b82f6', '#8b5cf6', '#06b6d4', '#10b981'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 10 } } }
+                }
+            }
+        });
+
+        function openModal(reportKey) {
+            alert("Seçilen Kaynak Araştırma: " + reportKey.toUpperCase() + "\nOrijinal rapora erişim ve ayrıntılı analiz Word belgesinde 'Ek 1: Rapor Kaynakça Matrisi' altında yer almaktadır.");
+        }
+    </script>
+</body>
+</html>
